@@ -12,6 +12,8 @@ namespace GameMain.Base
 
         private List<string> _cfgAssetPathList = new(); 
 
+        
+        
         public int GetInt(string configName)
         {
             return GameCompMgr.Config.GetInt(configName);
@@ -19,6 +21,14 @@ namespace GameMain.Base
         public string GetString(string configName)
         {
             return GameCompMgr.Config.GetString(configName);
+        }
+        public bool GetBool(string configName)
+        {
+            return GameCompMgr.Config.GetBool(configName);
+        }
+        public float GetFloat(string configName)
+        {
+            return GameCompMgr.Config.GetFloat(configName);
         }
 
         public void LoadCfg(string cfgFileName)

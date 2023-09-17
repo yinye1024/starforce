@@ -14,13 +14,13 @@ namespace GameMain.Game
     public class TestCfg : Singleton<TestCfg>
     {
         private bool _doPrint = true;
-        public void LoadConfig()
+        public void OnEnter()
         {
             ConfigMgr.Instance.LoadCfg(new List<string>{"DefaultConfig.txt","DefaultConfig_test.txt"});
         }
 
         
-        public void CheckCfg()
+        public void OnUpdate()
         {
             if (!ConfigMgr.Instance.IsOnLoading && this._doPrint)
             {
