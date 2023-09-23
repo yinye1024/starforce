@@ -7,13 +7,13 @@ namespace DataTableTools
 {
     public static class DTCfg
     {
-        public const string ExcelPath = "Assets/StreamingAssets/DTInput/Excel";
+        public const string ExcelPath = "Assets/StreamingAssets/DataTable/DTInput/Excel";
         
-        public const string TxtOutPath = "Assets/StreamingAssets/DTOutput/Txt";
+        public const string TxtOutPath = "Assets/StreamingAssets/DataTable/DTOutput/Txt";
         
-        public const string JsonOutPath = "Assets/StreamingAssets/DTOutput/Json";
+        public const string JsonOutPath = "Assets/StreamingAssets/DataTable/DTOutput/Json";
 
-        private const string CodeOutPath = "Assets/StreamingAssets/DTOutput/Code";
+        private const string CodeOutPath = "Assets/StreamingAssets/DataTable/DTOutput/Code";
         
         public const string CodeNameSpace = "DataTable";
         public const string CodeNamePrefix= "DT";

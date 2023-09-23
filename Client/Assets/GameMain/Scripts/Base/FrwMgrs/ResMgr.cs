@@ -6,7 +6,6 @@
 //----------------------------------------------------------------*/
 
 
-using System;
 using GameFramework.Resource;
 
 namespace GameMain.Base
