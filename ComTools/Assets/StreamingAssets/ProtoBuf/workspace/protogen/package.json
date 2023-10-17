@@ -1,0 +1,36 @@
+{
+  "name": "protogen",
+  "version": "0.2.1",
+  "description": "CLI tool to parse protobuf .proto file to C#, based on protobuf-net, also works on Windows/Mac/Linux",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/floatinghotpot/protogen.git"
+  },
+  "keywords": [
+    "protobuf",
+    "protogen",
+    "csharp",
+    "mono",
+    "rjfun"
+  ],
+  "author": "Raymond Xie <rjfun.mobile@gmail.com> (http://floatinghotpot.github.io/)",
+  "contributors": [
+    {
+      "name": "Raymond Xie",
+      "email": "rjfun.mobile@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/floatinghotpot/protogen/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "analyze": false,
+  "preferGlobal": "true",
+  "bin": {
+    "protogen": "index.js"
+  }
+}

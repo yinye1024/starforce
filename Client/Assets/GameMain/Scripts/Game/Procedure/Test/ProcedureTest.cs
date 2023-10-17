@@ -5,9 +5,6 @@
 // Feedback: mailto:ellan@gameframework.cn
 //------------------------------------------------------------
 
-using System.Collections.Generic;
-using GameFramework;
-using GameMain.Base;
 using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 
@@ -20,14 +17,14 @@ namespace GameMain.Game
         {
             base.OnEnter(procedureOwner);
             Log.Info("do OnEnter");
-            TestDataNode.Instance.test();
+            TestNetwork.Instance.OnEnter();
         }
 
 
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
-            TestDataNode.Instance.check();
+            TestNetwork.Instance.OnUpdate();
         }
 
     }
