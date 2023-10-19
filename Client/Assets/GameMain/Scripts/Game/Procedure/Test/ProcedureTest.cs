@@ -5,10 +5,11 @@
 // Feedback: mailto:ellan@gameframework.cn
 //------------------------------------------------------------
 
+using GameMain.Game;
 using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 
-namespace GameMain.Game
+namespace GameMain.Test
 {
     public class ProcedureTest : ProcedureBase
     {

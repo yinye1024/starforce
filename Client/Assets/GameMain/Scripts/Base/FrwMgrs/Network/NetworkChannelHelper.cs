@@ -50,14 +50,13 @@ namespace  GameMain.Base
         {
             PacketS2C packetS2C = (PacketS2C)ePacket;
       
-            NetworkMgr.Instance.OnS2C(packetS2C);
+            NetworkMgr.Instance.RouteS2C(packetS2C);
             if (packetS2C != null)
             {
-                // 这里也可以不手动调Release，框架会在下一针自动 release Packet
+                // 这里也可以不手动调 Release，框架会在下一针自动 release Packet
                 // 因为 Packet 是个EventArgs,分发完到这里，后一帧就会走EventArgs 的 release
-                // PacketPool.ReleaseS2CPacket(packetS2C);
+                PacketPool.ReleaseS2CPacket(packetS2C);
             }
-            
         }
 
 
@@ -94,7 +93,7 @@ namespace  GameMain.Base
             // // 客户端的服务器时间
             // avatarHeartBeatC2S.svr_time = 1010000;
             // m_NetworkChannel.Send(avatarHeartBeatC2S);
-            return true;
+            return NetworkMgr.Instance.SendHeartBeat();;
         }
 
         /// <summary>

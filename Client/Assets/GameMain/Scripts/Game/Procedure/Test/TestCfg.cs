@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using GameMain.Base;
 using UnityGameFramework.Runtime;
 
-namespace GameMain.Game
+namespace GameMain.Test
 {
     public class TestCfg : Singleton<TestCfg>
     {

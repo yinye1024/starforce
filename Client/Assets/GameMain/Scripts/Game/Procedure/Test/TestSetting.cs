@@ -10,7 +10,7 @@ using GameMain.Base;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 
-namespace GameMain.Game
+namespace GameMain.Test
 {
     public class TestSetting : Singleton<TestSetting>
     {

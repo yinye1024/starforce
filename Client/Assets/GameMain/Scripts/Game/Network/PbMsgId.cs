@@ -8,7 +8,6 @@
 
 
 using System;
-using yy.proto;
 
 namespace yy.proto
 {
@@ -31,9 +30,9 @@ namespace yy.proto
         public const UInt16 connect_active_s2c = 0;
         public const UInt16 role_login_s2c = 1;
         public const UInt16 role_reconnect_s2c = 2;
-        public const UInt16 create_role_s2c = 3;
-        public const UInt16 role_info_s2c = 4;
-        public const UInt16 role_logout_s2c = 5;
+        public const UInt16 create_role_s2c = 4;
+        public const UInt16 role_info_s2c = 5;
+        public const UInt16 role_logout_s2c = 6;
         
         //avatar
         public const UInt16 avatar_heart_beat_s2c = 7;

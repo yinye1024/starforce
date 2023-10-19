@@ -7,10 +7,11 @@
 
 using GameFramework.Resource;
 using GameMain.Base;
+using GameMain.Game;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 
-namespace GameMain.Game
+namespace GameMain.Test
 {
     public class TestResource : Singleton<TestResource>
     {
