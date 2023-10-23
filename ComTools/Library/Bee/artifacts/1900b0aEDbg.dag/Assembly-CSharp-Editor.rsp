@@ -413,8 +413,8 @@
 "Assets/Editor/DataTableTools/DTMenus.cs"
 "Assets/Editor/DataTableTools/ExcelToJson.cs"
 "Assets/Editor/DataTableTools/ExcelToTxt.cs"
-"Assets/Editor/Proto/ProtoCfg.cs"
-"Assets/Editor/Proto/ProtoToolsMenus.cs"
+"Assets/Editor/ProtoTools/ProtoCfg.cs"
+"Assets/Editor/ProtoTools/ProtoToolsMenus.cs"
 -langversion:9.0
 
 /deterministic
