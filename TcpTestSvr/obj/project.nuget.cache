@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "t9JZKvnD9g+CyeQM9R3fizA/zuG0f49oTuqJPeblV4BjkBo4jgTi/48QVZwPz+DCZQP2DIWxTrZEv9yv106uOg==",
+  "success": true,
+  "projectFilePath": "D:\\allen_github\\yinye1024\\starforce\\TcpTestSvr\\TcpTestSvr.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sunbirdjob\\.nuget\\packages\\protobuf-net\\3.2.26\\protobuf-net.3.2.26.nupkg.sha512",
+    "C:\\Users\\sunbirdjob\\.nuget\\packages\\protobuf-net.core\\3.2.26\\protobuf-net.core.3.2.26.nupkg.sha512",
+    "C:\\Users\\sunbirdjob\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",
+    "C:\\Users\\sunbirdjob\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
