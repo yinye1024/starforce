@@ -12,7 +12,7 @@ namespace GameMain.Base
     /// </summary>
     public partial class GameCompMgr
     {
-        public static BuiltinDataComponent BuiltinData
+        public static BuildInDataComponent BuildInData
         {
             get;
             private set;
@@ -26,7 +26,7 @@ namespace GameMain.Base
 
         private static void InitCustomComponents()
         {
-            BuiltinData = UnityGameFramework.Runtime.GameEntry.GetComponent<BuiltinDataComponent>();
+            BuildInData = UnityGameFramework.Runtime.GameEntry.GetComponent<BuildInDataComponent>();
             HPBar = UnityGameFramework.Runtime.GameEntry.GetComponent<HpBarComponent>();
         }
         

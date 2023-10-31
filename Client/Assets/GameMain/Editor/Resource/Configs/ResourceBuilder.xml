@@ -2,14 +2,14 @@
 <UnityGameFramework>
   <ResourceBuilder>
     <Settings>
-      <InternalResourceVersion>11</InternalResourceVersion>
+      <InternalResourceVersion>12</InternalResourceVersion>
       <Platforms>1</Platforms>
       <AssetBundleCompression>0</AssetBundleCompression>
       <CompressionHelperTypeName>UnityGameFramework.Runtime.DefaultCompressionHelper</CompressionHelperTypeName>
       <AdditionalCompressionSelected>False</AdditionalCompressionSelected>
       <ForceRebuildAssetBundleSelected>False</ForceRebuildAssetBundleSelected>
       <BuildEventHandlerTypeName>GameMain.Editor.ResourceBuildEventHandler</BuildEventHandlerTypeName>
-      <OutputDirectory>D:/allen_github/yinye1024/ufrw/Client/AssetBundles</OutputDirectory>
+      <OutputDirectory>D:/allen_github/yinye1024/starforce/Client/AssetBundles</OutputDirectory>
       <OutputPackageSelected>True</OutputPackageSelected>
       <OutputFullSelected>True</OutputFullSelected>
       <OutputPackedSelected>True</OutputPackedSelected>

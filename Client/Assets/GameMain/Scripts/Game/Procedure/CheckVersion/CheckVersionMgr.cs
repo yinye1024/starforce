@@ -28,7 +28,7 @@ namespace GameMain.Game
             VersionInfo = null;
 
             // 向服务器请求版本信息 获取 full 下面的 XXXVersion.txt 文件
-            string url = BuiltinDataMgr.Instance.GetCheckVersionUrl();
+            string url = BuildInDataMgr.Instance.GetCheckVersionUrl();
             HttpMgr.Instance.DoHttpGet(url, OnWebRequestSuccess);
         }
 
@@ -61,7 +61,7 @@ namespace GameMain.Game
                 return;
             }
 
-            // 设置资源更新下载地址
+            // 设置资源更新下载web地址
             ResMgr.Instance.SetUpdatePrefixUri(Utility.Path.GetRegularPath(VersionInfo.UpdatePrefixUri));
 
             CheckVersionComplete = true;
@@ -70,7 +70,7 @@ namespace GameMain.Game
         
         private void GotoUpdateApp(object userData)
         {
-            string url = BuiltinDataMgr.Instance.GetAppUrl();
+            string url = BuildInDataMgr.Instance.GetAppUrl();
             if (!string.IsNullOrEmpty(url))
             {
                 Application.OpenURL(url);

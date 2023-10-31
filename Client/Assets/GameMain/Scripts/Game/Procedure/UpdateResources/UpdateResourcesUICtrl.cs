@@ -39,7 +39,7 @@ namespace GameMain.Game
         {
             if (_updateResourceForm == null)
             {
-                _updateResourceForm = Object.Instantiate(BuiltinDataMgr.Instance.GetUpdateResourceFormTemplate());
+                _updateResourceForm = Object.Instantiate(BuildInDataMgr.Instance.GetUpdateResourceFormTemplate());
             }
         }
 
