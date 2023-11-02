@@ -6,7 +6,7 @@ namespace GameMain.Base
     public class ObjectPoolMgr:Singleton<ObjectPoolMgr>
     {
         
-        private HashMap<Type,IObjectPool<ObjectItemWrapper>> _poolMah = new();
+        private HashMap<Type,IObjectPool<ObjectItemWrapper>> _poolMap = new();
 
 
         public void InitPool<T>(int poolSize)
@@ -14,20 +14,20 @@ namespace GameMain.Base
             Type type = typeof(T);
             string name = type.ToString();
             IObjectPool<ObjectItemWrapper> newPool = GameCompMgr.ObjectPool.CreateSingleSpawnObjectPool<ObjectItemWrapper>(name, poolSize);
-            this._poolMah.Put(type,newPool);
+            this._poolMap.Put(type,newPool);
         }
 
         public int GetCount<T>() where T : ObjectItem
         {
             Type type = typeof(T);
-            IObjectPool<ObjectItemWrapper> typePool = this._poolMah.Get(type);
+            IObjectPool<ObjectItemWrapper> typePool = this._poolMap.Get(type);
             return typePool.Count;
         }
 
         public T Spawn<T>() where T:ObjectItem
         {
             Type type = typeof(T);
-            IObjectPool<ObjectItemWrapper> typePool = this._poolMah.Get(type);
+            IObjectPool<ObjectItemWrapper> typePool = this._poolMap.Get(type);
             
             ObjectItem objItem;
             ObjectItemWrapper objectItemWrapper = typePool.Spawn();
@@ -50,7 +50,7 @@ namespace GameMain.Base
         {
             objItem.OnUnSpawn();
             Type type = objItem.GetType();
-            IObjectPool<ObjectItemWrapper> typePool = this._poolMah.Get(type);
+            IObjectPool<ObjectItemWrapper> typePool = this._poolMap.Get(type);
             typePool.Unspawn(objItem);
         }
         
