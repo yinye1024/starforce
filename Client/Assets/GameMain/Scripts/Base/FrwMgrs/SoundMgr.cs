@@ -47,7 +47,7 @@ namespace GameMain.Base
             s_MusicSerialId = null;
         }
 
-        public  int? PlaySound(int soundId, EntityLg bindingEntity = null, object userData = null)
+        public  int? PlaySound(int soundId, EntityBsLg bindingEntityBs = null, object userData = null)
         {
             IDataTable<DTSound> dtSound = DataTableMgr.Instance.GetDataTable<DTSound>();
             DTSound drSound = dtSound.GetDataRow(soundId);
@@ -62,7 +62,7 @@ namespace GameMain.Base
             playSoundParams.Loop = drSound.Loop;
             playSoundParams.VolumeInSoundGroup = drSound.Volume;
             playSoundParams.SpatialBlend = drSound.SpatialBlend;
-            return GameCompMgr.Sound.PlaySound(AssetPathUtils.GetSoundAsset(drSound.AssetName), "Sound", Constant.AssetPriority.SoundAsset, playSoundParams, bindingEntity != null ? bindingEntity.Entity : null, userData);
+            return GameCompMgr.Sound.PlaySound(AssetPathUtils.GetSoundAsset(drSound.AssetName), "Sound", Constant.AssetPriority.SoundAsset, playSoundParams, bindingEntityBs != null ? bindingEntityBs.Entity : null, userData);
         }
 
         public  int? PlayUISound(int uiSoundId, object userData = null)

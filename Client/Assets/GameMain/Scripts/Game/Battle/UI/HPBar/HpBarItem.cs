@@ -26,10 +26,10 @@ namespace GameMain.Game
         private Canvas m_ParentCanvas = null;
         private RectTransform m_CachedTransform = null;
         private CanvasGroup m_CachedCanvasGroup = null;
-        private EntityLg m_Owner = null;
+        private EntityBsLg m_Owner = null;
         private int m_OwnerId = 0;
 
-        public EntityLg Owner
+        public EntityBsLg Owner
         {
             get
             {
@@ -37,7 +37,7 @@ namespace GameMain.Game
             }
         }
 
-        public void Init(EntityLg owner, Canvas parentCanvas, float fromHPRatio, float toHPRatio)
+        public void Init(EntityBsLg owner, Canvas parentCanvas, float fromHPRatio, float toHPRatio)
         {
             if (owner == null)
             {

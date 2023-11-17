@@ -36,7 +36,7 @@ namespace GameMain.Game
                 IDataTable<DTAsteroid> dtAsteroid = DataTableMgr.Instance.GetDataTable<DTAsteroid>();
                 float randomPositionX = SceneBackground.EnemySpawnBoundary.bounds.min.x + SceneBackground.EnemySpawnBoundary.bounds.size.x * (float)Utility.Random.GetRandomDouble();
                 float randomPositionZ = SceneBackground.EnemySpawnBoundary.bounds.min.z + SceneBackground.EnemySpawnBoundary.bounds.size.z * (float)Utility.Random.GetRandomDouble();
-                EntityBsMgr.ShowAsteroid(new AsteroidData(EntityBsMgr.GenerateSerialId(), 60000 + Utility.Random.GetRandom(dtAsteroid.Count))
+                AsteroidMgr.Instance.ShowAsteroid(new AsteroidBsData(EntityBsMgr.GenerateSerialId(), 60000 + Utility.Random.GetRandom(dtAsteroid.Count))
                 {
                     Position = new Vector3(randomPositionX, 0f, randomPositionZ),
                 });

@@ -50,22 +50,22 @@ namespace GameMain.Game
             }
         }
 
-        public void ShowHPBar(EntityLg entityLg, float fromHPRatio, float toHPRatio)
+        public void ShowHPBar(EntityBsLg entityBsLg, float fromHPRatio, float toHPRatio)
         {
-            if (entityLg == null)
+            if (entityBsLg == null)
             {
                 Log.Warning("Entity is invalid.");
                 return;
             }
 
-            HPBarPObj hpBarPObj = GetActiveHpBarPObj(entityLg);
+            HPBarPObj hpBarPObj = GetActiveHpBarPObj(entityBsLg);
             if (hpBarPObj == null)
             {
                 hpBarPObj = NewHpBarPObj();
                 _activeHpBarItems.Add(hpBarPObj);
             }
 
-            hpBarPObj.HpBarItem.Init(entityLg, cachedCanvas, fromHPRatio, toHPRatio);
+            hpBarPObj.HpBarItem.Init(entityBsLg, cachedCanvas, fromHPRatio, toHPRatio);
         }
 
         private void HideHPBar(HPBarPObj hpBarPObj)
@@ -74,16 +74,16 @@ namespace GameMain.Game
             ObjectPoolMgr.Instance.Unspawn(hpBarPObj);
         }
 
-        private HPBarPObj GetActiveHpBarPObj(EntityLg entityLg)
+        private HPBarPObj GetActiveHpBarPObj(EntityBsLg entityBsLg)
         {
-            if (entityLg == null)
+            if (entityBsLg == null)
             {
                 return null;
             }
 
             for (int i = 0; i < _activeHpBarItems.Count; i++)
             {
-                if (_activeHpBarItems[i].HpBarItem.Owner == entityLg)
+                if (_activeHpBarItems[i].HpBarItem.Owner == entityBsLg)
                 {
                     return _activeHpBarItems[i];
                 }

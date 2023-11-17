@@ -31,7 +31,7 @@ namespace GameMain.Game
             protected set;
         }
 
-        private MyAircraft m_MyAircraft = null;
+        private MyAircraftLg _mMyAircraftLg = null;
 
         public virtual void Initialize()
         {
@@ -46,14 +46,14 @@ namespace GameMain.Game
             }
 
             SceneBackground.VisibleBoundary.gameObject.GetOrAddComponent<HideByBoundary>();
-            EntityBsMgr.ShowMyAircraft(new MyAircraftData(EntityBsMgr.GenerateSerialId(), 10000)
+            MyAircraftMgr.Instance.ShowMyAircraft(new MyAircraftBsData(EntityBsMgr.GenerateSerialId(), 10000)
             {
                 Name = "My Aircraft",
                 Position = Vector3.zero,
             });
 
             GameOver = false;
-            m_MyAircraft = null;
+            _mMyAircraftLg = null;
         }
 
         public virtual void Shutdown()
@@ -64,7 +64,7 @@ namespace GameMain.Game
 
         public virtual void Update(float elapseSeconds, float realElapseSeconds)
         {
-            if (m_MyAircraft != null && m_MyAircraft.IsDead)
+            if (_mMyAircraftLg != null && _mMyAircraftLg.IsDead)
             {
                 GameOver = true;
                 return;
@@ -74,9 +74,9 @@ namespace GameMain.Game
         protected virtual void OnShowEntitySuccess(object sender, GameEventArgs e)
         {
             ShowEntitySuccessEventArgs ne = (ShowEntitySuccessEventArgs)e;
-            if (ne.EntityLogicType == typeof(MyAircraft))
+            if (ne.EntityLogicType == typeof(MyAircraftLg))
             {
-                m_MyAircraft = (MyAircraft)ne.Entity.Logic;
+                _mMyAircraftLg = (MyAircraftLg)ne.Entity.Logic;
             }
         }
 

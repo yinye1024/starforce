@@ -23,7 +23,7 @@ namespace GameMain.Game
                 return;
             }
 
-            EntityBsMgr.HideEntity((EntityLg)entity.Logic);
+            EntityBsMgr.HideEntity((EntityBsLg)entity.Logic);
         }
     }
 }

@@ -115,24 +115,24 @@ namespace GameMain.Game
         /// 获取实体间的距离。
         /// </summary>
         /// <returns>实体间的距离。</returns>
-        public static float GetDistance(EntityLg fromEntity, EntityLg toEntity)
+        public static float GetDistance(EntityBsLg fromEntityBs, EntityBsLg toEntityBs)
         {
-            Transform fromTransform = fromEntity.CachedTransform;
-            Transform toTransform = toEntity.CachedTransform;
+            Transform fromTransform = fromEntityBs.CachedTransform;
+            Transform toTransform = toEntityBs.CachedTransform;
             return (toTransform.position - fromTransform.position).magnitude;
         }
 
-        public static void PerformCollision(TargetableObject entity, EntityLg other)
+        public static void PerformCollision(TargetableEntityBsLg entityBsLg, EntityBsLg other)
         {
-            if (entity == null || other == null)
+            if (entityBsLg == null || other == null)
             {
                 return;
             }
 
-            TargetableObject target = other as TargetableObject;
+            TargetableEntityBsLg target = other as TargetableEntityBsLg;
             if (target != null)
             {
-                ImpactData entityImpactData = entity.GetImpactData();
+                ImpactData entityImpactData = entityBsLg.GetImpactData();
                 ImpactData targetImpactData = target.GetImpactData();
                 if (GetRelation(entityImpactData.Camp, targetImpactData.Camp) == RelationType.Friendly)
                 {
@@ -149,16 +149,16 @@ namespace GameMain.Game
                     targetDamageHP += delta;
                 }
 
-                entity.ApplyDamage(target, entityDamageHP);
-                target.ApplyDamage(entity, targetDamageHP);
+                entityBsLg.ApplyDamage(target, entityDamageHP);
+                target.ApplyDamage(entityBsLg, targetDamageHP);
                 return;
             }
 
-            Bullet bullet = other as Bullet;
-            if (bullet != null)
+            BulletLg bulletLg = other as BulletLg;
+            if (bulletLg != null)
             {
-                ImpactData entityImpactData = entity.GetImpactData();
-                ImpactData bulletImpactData = bullet.GetImpactData();
+                ImpactData entityImpactData = entityBsLg.GetImpactData();
+                ImpactData bulletImpactData = bulletLg.GetImpactData();
                 if (GetRelation(entityImpactData.Camp, bulletImpactData.Camp) == RelationType.Friendly)
                 {
                     return;
@@ -166,8 +166,8 @@ namespace GameMain.Game
 
                 int entityDamageHP = CalcDamageHP(bulletImpactData.Attack, entityImpactData.Defense);
 
-                entity.ApplyDamage(bullet, entityDamageHP);
-                EntityBsMgr.HideEntity(bullet);
+                entityBsLg.ApplyDamage(bulletLg, entityDamageHP);
+                EntityBsMgr.HideEntity(bulletLg);
                 return;
             }
         }
