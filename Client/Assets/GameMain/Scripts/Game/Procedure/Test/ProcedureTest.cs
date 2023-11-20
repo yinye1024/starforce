@@ -6,6 +6,7 @@
 //------------------------------------------------------------
 
 using GameMain.Game;
+using GameMain.Test.Event;
 using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 
@@ -18,14 +19,14 @@ namespace GameMain.Test
         {
             base.OnEnter(procedureOwner);
             Log.Info("do OnEnter");
-            TestNetwork.Instance.OnEnter();
+            TestEventMgr.Instance.OnEnter();
         }
 
 
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
-            TestNetwork.Instance.OnUpdate();
+            TestEventMgr.Instance.OnUpdate();
         }
 
     }

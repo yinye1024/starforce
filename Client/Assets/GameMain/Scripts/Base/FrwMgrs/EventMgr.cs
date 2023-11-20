@@ -18,6 +18,11 @@ namespace GameMain.Base
         {
             GameCompMgr.Event.Unsubscribe(eventId,  eventHandler);
         }
+        
+        public void Fire(object sender, GameEventArgs eventArgs){
+            GameCompMgr.Event.Fire(sender,  eventArgs);
+        }
+
 
     }
 }
