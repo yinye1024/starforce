@@ -18,7 +18,7 @@ namespace GameMain.Test
 
         private DateTime _lastDateTime = DateTime.UtcNow;
         private bool doTest = true;
-        public void test()
+        public void OnEnter()
         {
             
 
@@ -36,7 +36,7 @@ namespace GameMain.Test
             DataNodePlayerDao.Instance.SetData<Player>(player);
         }
 
-        public void check()
+        public void OnUpdate()
         {
             DateTime now = DateTime.UtcNow; // 获取当前UTC时间
             TimeSpan elapsedTime = now - _lastDateTime;
